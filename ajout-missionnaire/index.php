@@ -520,11 +520,11 @@
         <div class="row">
           <div class="col-xs-12 col-sm-6">
             <div class="copyright-info">
-              <span>Copyright © 2019 a theme by <a href="https://themefisher.com">themefisher.com</a></span>
+              <span>Copyright © 2020 by <a href="#">Themefisher & MOD-PC</a></span>
             </div>
           </div>
 
-          <div class="col-xs-12 col-sm-6">
+          <!--<div class="col-xs-12 col-sm-6">
             <div class="footer-menu">
               <ul class="nav unstyled">
                 <li><a href="about.html">About</a></li>
@@ -535,6 +535,7 @@
               </ul>
             </div>
           </div>
+		  -->
         </div><!-- Row end -->
 
         <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix">
