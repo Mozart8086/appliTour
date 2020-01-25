@@ -342,6 +342,7 @@
 
 		  if (isset($_GET['submit']))
 		  {
+			$MissionnaireMatricule = securisation($_GET['matricule_missionnaire']);
 			$NomMissionnaire = securisation($_GET['nom_missionnaire']);
 			$PrenomsMissionnaire = securisation($_GET['prenoms_missionnaire']);
 			$DepartementMinisterielMissionnaire = securisation($_GET['departement_ministeriel']);
@@ -350,6 +351,12 @@
 			$TelephoneMissionnaire = securisation($_GET['telephone1_missionnaire']);
 			$Telephone2Missionnaire = securisation($_GET['telephone2_missionnaire']);
 			$EmailMissionnaire = securisation($_GET['email_missionnaire']);
+			
+			$CelluleMissionnaire = securisation($_GET['cellule_missionnaire']);
+			$HabitationMissionnaire = securisation($_GET['habitation_missionnaire']);
+			$TravailMissionnaire = securisation($_GET['travail_missionnaire']);
+			$FonctionMissionnaire = securisation($_GET['fonction_missionnaire']);
+			$DateIntegrationMissionnaire = securisation($_GET['date_integration']);
 			
 			//Pays, Ville ???
 			
@@ -364,7 +371,7 @@
 			
 			if (isset($_GET['submit']))
              {
-				$sql ="INSERT INTO missionnaire (NomMissionnaire, PrenomsMissionnaire, DepartementMinisterielMissionnaire, DepartementActuelMissionnaire, TelephoneMissionnaire, Telephone2Missionnaire, EmailMissionnaire, EgliseMissionnaire, PhotoMissionnaire) VALUES ('$NomMissionnaire', '$PrenomsMissionnaire', '$DepartementMinisterielMissionnaire', '$DepartementActuelMissionnaire', '$TelephoneMissionnaire', '$Telephone2Missionnaire', '$EmailMissionnaire', '$EgliseMissionnaire', '$PhotoMissionnaire' )";
+				$sql ="INSERT INTO missionnaire (MissionnaireMatricule, NomMissionnaire, PrenomsMissionnaire, DepartementMinisterielMissionnaire, DepartementActuelMissionnaire, TelephoneMissionnaire, Telephone2Missionnaire, EmailMissionnaire, CelluleMissionnaire, HabitationMissionnaire, TravailMissionnaire, FonctionMissionnaire, DateIntegrationMissionnaire, EgliseMissionnaire, PhotoMissionnaire) VALUES ('$MissionnaireMatricule','$NomMissionnaire', '$PrenomsMissionnaire', '$DepartementMinisterielMissionnaire', '$DepartementActuelMissionnaire', '$TelephoneMissionnaire', '$Telephone2Missionnaire', '$EmailMissionnaire', '$CelluleMissionnaire', '$HabitationMissionnaire', '$TravailMissionnaire', '$FonctionMissionnaire', '$DateIntegrationMissionnaire', '$EgliseMissionnaire', '$PhotoMissionnaire' )";
 				 
 				$result = mysqli_query($conn, $sql);
 
