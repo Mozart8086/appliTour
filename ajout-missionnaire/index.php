@@ -325,7 +325,7 @@
                
                <h3 class="column-title">Ajouter un missionnaire</h3>
 
-               <form action="ControllerAddMissionnaire.php" method="post" role="form">
+               <form action="../admin/Controllers/ControllerAddMissionnaire.php" method="get" role="form">
                   <div class="error-container"></div>				  
 						<label><font color=red>*</font><i>Champs obligatoires</i></label>
 				  <!-- Ajout champ du Matricule -->
@@ -427,22 +427,22 @@
                      </div>
                      <div class="col-md-4">
                         <div class="form-group">
-                           <label>Lieu de résidence</label>
-                           <input class="form-control form-control-residence_missionnaire" name="residence_missionnaire" id="residence_missionnaire" placeholder="">
+                           <label>Lieu d'habitation</label>
+                           <input class="form-control form-control-habitation_missionnaire" name="habitation_missionnaire" id="habitation_missionnaire" placeholder="">
                         </div>
                      </div>
                   </div>
 				  <div class="row">
 				  <div class="col-md-4">
                         <div class="form-group">
-                           <label>Fonction au travail</label>
-                        <input class="form-control form-control-fonction_missionnaire" name="fonction_missionnaire" id="fonction_missionnaire" placeholder="" type="text">
+                           <label>Lieu de travail</label>
+                        <input class="form-control form-control-travail_missionnaire" name="travail_missionnaire" id="travail_missionnaire" placeholder="" type="text">
                         </div>
                      </div>
                      <div class="col-md-4">
                         <div class="form-group">
-                           <label>Date d'intégration à Messages de Vie</label>
-                           <input class="form-control form-control-date_integration" name="date_integration" id="date_integration" placeholder="" type="date">
+                           <label>Fonction au travail</label>
+                           <input class="form-control form-control-fonction_missionnaire" name="fonction_missionnaire" id="fonction_missionnaire" placeholder="" type="text">
                         </div>
                      </div>
                      <div class="col-md-4">
@@ -456,7 +456,10 @@
                      <label>Message</label>
                      <textarea class="form-control form-control-message" name="message" id="message" placeholder="" rows="10" required></textarea>
                   </div>-->
-				  
+				  <div class="form-group">
+                     <label>Date d'intégration à Messages de Vie</label>
+				     <input class="form-control form-control-date_integration" name="date_integration" id="date_integration" placeholder="" type="date">
+                  </div>
 				  
                   <div class="text-right"><br>
                      <button class="btn btn-primary solid blank" type="submit" name="submit" id="submit">Enregistrer</button> 
