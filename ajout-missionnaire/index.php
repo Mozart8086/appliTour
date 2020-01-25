@@ -46,7 +46,7 @@
 
 	<div class="body-inner">
 
-		<div id="top-bar" class="top-bar">
+		<!--<div id="top-bar" class="top-bar">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
@@ -56,7 +56,7 @@
 							</li>
 						</ul>
 					</div>
-					<!--/ Top info end -->
+					
 
 					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 top-social text-right">
 						<ul class="unstyled">
@@ -76,16 +76,16 @@
 							</li>
 						</ul>
 					</div>
-					<!--/ Top social end -->
+					
 				</div>
-				<!--/ Content row end -->
+				
 			</div>
-			<!--/ Container end -->
+			
 		</div>
-		<!--/ Topbar end -->
+		-->
 
-		<!-- Header start -->
-		<header id="header" class="header-one">
+		
+		<!--<header id="header" class="header-one">
 			<div class="container">
 				<div class="row">
 					<div class="logo-area clearfix">
@@ -93,7 +93,7 @@
 							<a href="index.html">
 								<img src="images/logo.png" alt="">
 							</a>
-						</div><!-- logo end -->
+						</div>
 
 						<div class="col-xs-12 col-md-9 header-right">
 							<ul class="top-info-box">
@@ -124,12 +124,12 @@
 								<li class="header-get-a-quote">
 									<a class="btn btn-primary" href="contact.html">Get A Quote</a>
 								</li>
-							</ul><!-- Ul end -->
-						</div><!-- header right end -->
-					</div><!-- logo area end -->
+							</ul>
+						</div>
+					</div>
 
-				</div><!-- Row end -->
-			</div><!-- Container end -->
+				</div>
+			</div>
 
 			<nav class="site-navigation navigation navdown">
 				<div class="container">
@@ -214,34 +214,34 @@
 										<li><a href="contact.html">Contact</a></li>
 
 									</ul>
-									<!--/ Nav ul end -->
+									
 								</div>
-								<!--/ Collapse end -->
+								
 
-							</div><!-- Site Navbar inner end -->
+							</div>
 
 						</div>
-						<!--/ Col end -->
+						
 					</div>
-					<!--/ Row end -->
+					
 
 					<div class="nav-search">
 						<span id="search"><i class="fa fa-search"></i></span>
-					</div><!-- Search end -->
+					</div>
 
 					<div class="search-block" style="display: none;">
 						<input type="text" class="form-control" placeholder="Type what you want and enter">
 						<span class="search-close">&times;</span>
-					</div><!-- Site search end -->
+					</div>
 				</div>
-				<!--/ Container end -->
+				
 
 			</nav>
-			<!--/ Navigation end -->
+			
 		</header>
-		<!--/ Header end -->
+		-->
 
-   <div id="banner-area" class="banner-area" style="background-image:url(images/banner/banner3.jpg)">
+   <!--<div id="banner-area" class="banner-area" style="background-image:url(images/banner/banner3.jpg)">
       <div class="banner-text">
          <div class="container">
             <div class="row">
@@ -253,22 +253,27 @@
                         <li><a href="#">Contact</a></li>
                      </ol>
                   </div>
-               </div><!-- Col end -->
-            </div><!-- Row end -->
-         </div><!-- Container end -->
-      </div><!-- Banner text end -->
-   </div><!-- Banner area end --> 
-
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+    -->
 
   <section id="main-container" class="main-container">
       <div class="container">
 
-         <div class="row text-center">
+         <!--<div class="row text-center">
             <h2 class="section-title">Reaching our Office</h2>
             <h3 class="section-sub-title">Find Our Location</h3>
-         </div><!--/ Title row end -->
+         </div>
+		 -->
+		 <div class="row text-center">
+            <img src="" alt="Logo de Messages de Vie" />
+			<img src="" alt="Logo du Tour 931" />
+         </div>
 
-         <div class="row">
+         <!--<div class="row">
             <div class="col-md-4">
                <div class="ts-service-box-bg text-center">
                   <span class="ts-service-icon icon-round">
@@ -279,7 +284,7 @@
                      <p>9051 Constra Incorporate, USA</p>
                  </div>
                </div>
-            </div><!-- Col 1 end -->
+            </div>
 
             <div class="col-md-4">
                <div class="ts-service-box-bg text-center">
@@ -291,7 +296,7 @@
                      <p>office@Constra.com</p>
                  </div>
                </div>
-            </div><!-- Col 2 end -->
+            </div>
 
             <div class="col-md-4">
                <div class="ts-service-box-bg text-center">
@@ -303,15 +308,16 @@
                      <p>(+9) 847-291-4353</p>
                  </div>
                </div>
-            </div><!-- Col 3 end -->
+            </div>
 
-         </div><!-- 1st row end -->
-
-         <div class="gap-60"></div>
+         </div>
+		-->
+         <!--<div class="gap-60"></div>
 
          <div id="map" class="map"></div>
 
          <div class="gap-40"></div>
+		 -->
 
          <div class="row">
 
