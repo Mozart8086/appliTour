@@ -269,8 +269,8 @@
          </div>
 		 -->
 		 <div class="row text-center">
-            <img src="" alt="Logo de Messages de Vie" />
-			<img src="" alt="Logo du Tour 931" />
+            <img src="../images/logo-mdvie-new1.png" alt="Logo de Messages de Vie" />
+			<img src="../images/logo-tour931-saison2.png" alt="Logo du Tour 931" />
          </div>
 
          <!--<div class="row">
