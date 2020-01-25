@@ -379,6 +379,7 @@
 				{
 
 					echo "<p><br><br><center><h2>Le missionnaire a bien été enregistré !</h2></center></p>";
+					echo "<p><br><br><center><h2><a href=../../ajout-missionnaire/>Ajouter un missionnaire</h2></center></p>";
 					//echo "<p><br><center><h2><a href=liste_missionnaires.php>Liste des missionnaires<a></h2></center></p>";
 				}
 				else
