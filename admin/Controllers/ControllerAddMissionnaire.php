@@ -324,149 +324,72 @@
             <div class="col-md-12">
                
                <h3 class="column-title">Ajouter un missionnaire</h3>
-
-               <form action="ControllerAddMissionnaire.php" method="post" role="form">
+			   
                   <div class="error-container"></div>				  
-						<label><font color=red>*</font><i>Champs obligatoires</i></label>
+						
+		<?php
+
+		  function securisation($donnees)
+		  {
+			$donnees = trim($donnees);
+			$donnees = addslashes($donnees);
+			$donnees = strip_tags($donnees);
+			$donnees = htmlspecialchars($donnees);
+			return $donnees;
+		  }
+
+		  include ('connection.php');
+
+		  if (isset($_GET['submit']))
+		  {
+			$NomMissionnaire = securisation($_GET['nom_missionnaire']);
+			$PrenomsMissionnaire = securisation($_GET['prenoms_missionnaire']);
+			$DepartementMinisterielMissionnaire = securisation($_GET['departement_ministeriel_missionnaire']);
+			$DepartementActuelMissionnaire = securisation($_GET['departement_ministeriel_missionnaire']);			
+			
+			$TelephoneMissionnaire = securisation($_GET['telephone_missionnaire']);
+			$Telephone2Missionnaire = securisation($_GET['telephone2_missionnaire']);
+			$EmailMissionnaire = securisation($_GET['email_missionnaire']);
+			
+			//Pays, Ville ???
+			
+			$EgliseMissionnaire = securisation($_GET['eglise_missionnaire']);
+			
+			$PhotoMissionnaire = securisation($_GET['photo_missionnaire']);
+			//$SexeMissionnaire = securisation($_GET['sexe_missionnaire']);
+			
+			$today = date("d-m-Y"); 
+			$DateInscription = $today;
+			
+			if (isset($_GET['submit']))
+             {
+				$sql ="INSERT INTO missionnaire (NomMissionnaire, PrenomsMissionnaire, DepartementMinisterielMissionnaire, DepartementActuelMissionnaire, TelephoneMissionnaire, Telephone2Missionnaire, EmailMissionnaire, EgliseMissionnaire, PhotoMissionnaire) VALUES ('$NomMissionnaire', '$PrenomsMissionnaire', '$DepartementMinisterielMissionnaire', '$DepartementActuelMissionnaire', '$TelephoneMissionnaire', '$Telephone2Missionnaire', '$EmailMissionnaire', '$EgliseMissionnaire', '$PhotoMissionnaire' )";
+				 
+				$result = mysqli_query($conn, $sql);
+
+				if ($result == true)
+				{
+
+					echo "<p><br><br><center><h2>Le missionnaire a bien été enregistré !</h2></center></p>";
+					//echo "<p><br><center><h2><a href=liste_missionnaires.php>Liste des missionnaires<a></h2></center></p>";
+				}
+				else
+				{
+					echo "<br><br><br><br><center><h2>Erreur pendant votre enregistrement</h2>";
+					//echo $sql;
+					echo "</center>";
+				}
+			 }
+		  } 
+		  
+		  mysqli_close($conn);
+			  
+		?>
+						
 				  <!-- Ajout champ du Matricule -->
 				  
-				  <div class="form-group">
-                     <label>Matricule <font color=red>*</font></label>
-                     <!--<textarea class="form-control form-control-message" name="message" id="message" placeholder="" rows="10" required></textarea>-->
-				  <select class="form-control form-control-matricule_missionnaire" name="matricule_missionnaire" id="matricule_missionnaire" required>
-								<option></option>
-								<?php
-								for ($i = 1; $i <= 500; $i++) {
-									if($i<10){
-										echo "<option>MVTM000".$i."</option>";
-								}elseif($i<100){
-									echo "<option>MVTM00".$i."</option>";
-								}else{
-									echo "<option>MVTM0".$i."</option>";
-								}
-									
-								}
-								?>
-						   </select>
-				    </div>
 				  
-				  <!-- Fin ajout Matricule -->
-                  <div class="row">
-                     <div class="col-md-4">
-                        <div class="form-group">
-                           <label>Nom <font color=red>*</font></label>
-                        <input class="form-control form-control-nom_missionnaire" name="nom_missionnaire" id="nom_missionnaire" placeholder="" type="text" required>
-                        </div>
-                     </div>
-                     <div class="col-md-4">
-                        <div class="form-group">
-                           <label>Prénoms <font color=red>*</font></label>
-                           <input class="form-control form-control-prenoms_missionnaire" name="prenoms_missionnaire" id="prenoms_missionnaire" 
-                           placeholder="" type="text" required>
-                        </div>
-                     </div>
-                     <div class="col-md-4">
-                        <div class="form-group">
-                           <label>Département ministériel</label>
-                           <!--<input class="form-control form-control-subject" name="subject" id="subject" 
-                           placeholder="" required>-->
-						   <select class="form-control form-control-departement_ministeriel" name="departement_ministeriel" id="departement_ministeriel">
-								<option></option>
-								<option>Action apostolique</option>
-								<option>Action missionnaire</option>
-								<option>Action prophétique</option>
-								<option>Tente du Réveil</option>
-								<option>Administration</option>
-								<option>Base missionnaire</option>
-								<option>Direction technique</option>
-								<option>Ecole Mdvie</option>
-								<option>Intégration</option>
-								<option>Planification</option>
-						   </select>
-                        </div>
-                     </div>
-					</div>
-					<div class="row">
-					 <div class="col-md-4">
-                        <div class="form-group">
-                           <label>Département technique principal <font color=red>*</font></label>
-                        <!--<input class="form-control form-control-name" name="name" id="name" placeholder="" type="text" required>-->
-						<select class="form-control form-control-departement_technique1" name="departement_technique1" id="departementtechnique" required>
-								<option></option>
-								<?php include("../departements/liste_departements.php"); ?>
-						   </select>
-                        </div>
-                     </div>
-                     <div class="col-md-4">
-                        <div class="form-group">
-                           <label>Téléphone 1 <font color=red>*</font></label>
-                           <input class="form-control form-control-telephone1_missionnaire" name="telephone1_missionnaire" id="telephone1_missionnaire" 
-                           placeholder="" type="text" required>
-                        </div>
-                     </div>
-                     <div class="col-md-4">
-                        <div class="form-group">
-                           <label>Téléphone 2</label>
-                           <input class="form-control form-control-telephone2_missionnaire" name="telephone2_missionnaire" id="telephone2_missionnaire" 
-                           placeholder="" type="text">
-                        </div>
-                     </div>
-                  </div>
-				  <div class="row">
-				  <div class="col-md-4">
-                        <div class="form-group">
-                           <label>Email</label>
-                        <input class="form-control form-control-email_missionnaire" name="email_missionnaire" id="email_missionnaire" placeholder="" type="email">
-                        </div>
-                     </div>
-                     <div class="col-md-4">
-                        <div class="form-group">
-                           <label>Cellule</label>
-                           <input class="form-control form-control-cellule_missionnaire" name="cellule_missionnaire" id="cellule_missionnaire" placeholder="" type="text">
-                        </div>
-                     </div>
-                     <div class="col-md-4">
-                        <div class="form-group">
-                           <label>Lieu de résidence</label>
-                           <input class="form-control form-control-residence_missionnaire" name="residence_missionnaire" id="residence_missionnaire" placeholder="">
-                        </div>
-                     </div>
-                  </div>
-				  <div class="row">
-				  <div class="col-md-4">
-                        <div class="form-group">
-                           <label>Fonction au travail</label>
-                        <input class="form-control form-control-fonction_missionnaire" name="fonction_missionnaire" id="fonction_missionnaire" placeholder="" type="text">
-                        </div>
-                     </div>
-                     <div class="col-md-4">
-                        <div class="form-group">
-                           <label>Date d'intégration à Messages de Vie</label>
-                           <input class="form-control form-control-date_integration" name="date_integration" id="date_integration" placeholder="" type="date">
-                        </div>
-                     </div>
-                     <div class="col-md-4">
-                        <div class="form-group">
-                           <label>Eglise</label>
-                           <input class="form-control form-control-eglise_missionnaire" name="eglise_missionnaire" id="eglise_missionnaire" placeholder="" type="text">
-                        </div>
-                     </div>
-                  </div>
-                  <!--<div class="form-group">
-                     <label>Message</label>
-                     <textarea class="form-control form-control-message" name="message" id="message" placeholder="" rows="10" required></textarea>
-                  </div>-->
-				  
-				  
-                  <div class="text-right"><br>
-                     <button class="btn btn-primary solid blank" type="submit">Enregistrer</button> 
-                  </div>
-               </form>
-            </div>
-			<div>
-				<label><a href="#">Déjà inscrit ? Connectez-vous ici</a></label>
 			</div>
-         
          </div><!-- Content row -->
       </div><!-- Conatiner end -->
    </section><!-- Main container end -->
