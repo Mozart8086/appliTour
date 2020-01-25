@@ -459,7 +459,7 @@
 				  
 				  
                   <div class="text-right"><br>
-                     <button class="btn btn-primary solid blank" type="submit">Enregistrer</button> 
+                     <button class="btn btn-primary solid blank" type="submit" name="submit" id="submit">Enregistrer</button> 
                   </div>
                </form>
             </div>
