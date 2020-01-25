@@ -463,6 +463,9 @@
                   </div>
                </form>
             </div>
+			<div>
+				<label><a href="#">Déjà inscrit ? Connectez-vous ici</a></label>
+			</div>
          
          </div><!-- Content row -->
       </div><!-- Conatiner end -->
@@ -470,7 +473,7 @@
 	
 
    <footer id="footer" class="footer bg-overlay">
-    <div class="footer-main">
+    <!--<div class="footer-main">
       <div class="container">
         <div class="row">
           <div class="col-md-4 col-sm-12 footer-widget footer-about">
@@ -485,8 +488,8 @@
                 <li><a href="https://instagram.com/themefisher"><i class="fa fa-instagram"></i></a></li>
                 <li><a href="https://github.com/themefisher"><i class="fa fa-github"></i></a></li>
               </ul>
-            </div><!-- Footer social end -->
-          </div><!-- Col end -->
+            </div>
+          </div
 
           <div class="col-md-4 col-sm-12 footer-widget">
             <h3 class="widget-title">Working Hours</h3>
@@ -497,7 +500,7 @@
               <br> Saturday: <span class="text-right">12:00 - 15:00</span>
               <br> Sunday and holidays: <span class="text-right">09:00 - 12:00</span>
             </div>
-          </div><!-- Col end -->
+          </div>
 
           <div class="col-md-4 col-sm-12 footer-widget">
             <h3 class="widget-title">Services</h3>
@@ -508,12 +511,13 @@
               <li><a href="service-single.html">Design and Build</a></li>
               <li><a href="service-single.html">Self-Perform Construction</a></li>
             </ul>
-          </div><!-- Col end -->
+          </div>
 
 
-        </div><!-- Row end -->
-      </div><!-- Container end -->
-    </div><!-- Footer main end -->
+        </div>
+      </div>
+    </div>
+	
 
     <div class="copyright">
       <div class="container">
@@ -524,7 +528,7 @@
             </div>
           </div>
 
-          <!--<div class="col-xs-12 col-sm-6">
+          <div class="col-xs-12 col-sm-6">
             <div class="footer-menu">
               <ul class="nav unstyled">
                 <li><a href="about.html">About</a></li>
@@ -535,18 +539,32 @@
               </ul>
             </div>
           </div>
-		  -->
-        </div><!-- Row end -->
+		 
+        </div>
 
         <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix">
           <button class="btn btn-primary" title="Back to Top">
             <i class="fa fa-angle-double-up"></i>
           </button>
         </div>
+		
 
-      </div><!-- Container end -->
-    </div><!-- Copyright end -->
-
+      </div>
+    </div>
+	-->
+	
+	<div class="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <div class="copyright-info">
+              <span>Copyright © 2020 by <a href="#">Themefisher & MOD-PC</a></span>
+            </div>
+          </div>
+		</div>
+	  </div>
+	  </div>
+	
   </footer><!-- Footer end -->
 
 
