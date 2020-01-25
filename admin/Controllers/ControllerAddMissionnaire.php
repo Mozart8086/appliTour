@@ -269,8 +269,8 @@
          </div>
 		 -->
 		 <div class="row text-center">
-            <img src="../images/logo-mdvie-new1.png" alt="Logo de Messages de Vie" />
-			<img src="../images/logo-tour931-saison2.png" alt="Logo du Tour 931" />
+            <img src="../../images/logo-mdvie-new1.png" alt="Logo de Messages de Vie" />
+			<img src="../../images/logo-tour931-saison2.png" alt="Logo du Tour 931" />
          </div>
 
          <!--<div class="row">
@@ -338,16 +338,16 @@
 			return $donnees;
 		  }
 
-		  include ('connection.php');
+		  include ('../connection.php');
 
 		  if (isset($_GET['submit']))
 		  {
 			$NomMissionnaire = securisation($_GET['nom_missionnaire']);
 			$PrenomsMissionnaire = securisation($_GET['prenoms_missionnaire']);
-			$DepartementMinisterielMissionnaire = securisation($_GET['departement_ministeriel_missionnaire']);
-			$DepartementActuelMissionnaire = securisation($_GET['departement_ministeriel_missionnaire']);			
+			$DepartementMinisterielMissionnaire = securisation($_GET['departement_ministeriel']);
+			$DepartementActuelMissionnaire = securisation($_GET['departement_technique1']);			
 			
-			$TelephoneMissionnaire = securisation($_GET['telephone_missionnaire']);
+			$TelephoneMissionnaire = securisation($_GET['telephone1_missionnaire']);
 			$Telephone2Missionnaire = securisation($_GET['telephone2_missionnaire']);
 			$EmailMissionnaire = securisation($_GET['email_missionnaire']);
 			
@@ -355,7 +355,8 @@
 			
 			$EgliseMissionnaire = securisation($_GET['eglise_missionnaire']);
 			
-			$PhotoMissionnaire = securisation($_GET['photo_missionnaire']);
+			//$PhotoMissionnaire = securisation($_GET['photo_missionnaire']);
+			$PhotoMissionnaire = "test.png";
 			//$SexeMissionnaire = securisation($_GET['sexe_missionnaire']);
 			
 			$today = date("d-m-Y"); 
@@ -376,7 +377,7 @@
 				else
 				{
 					echo "<br><br><br><br><center><h2>Erreur pendant votre enregistrement</h2>";
-					//echo $sql;
+					echo $sql;
 					echo "</center>";
 				}
 			 }
