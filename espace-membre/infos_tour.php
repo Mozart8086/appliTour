@@ -145,10 +145,10 @@
 								</button>-->								
 								<div class="collapse navbar-collapse navbar-responsive-collapse">
 									<ul class="nav navbar-nav">
-										<li class="active">
-											<a href="./">Accueil</a>
+										<li>
+											<a href="./?matricule=<?php echo $_GET["matricule"] ?>">Accueil</a>
 										</li>
-										<li class="dropdown">
+										<li class="dropdown active">
 											<a href="infos_tour.php?matricule=<?php echo $_GET["matricule"] ?>">Infos du Tour</a>
 										</li>
 										<li>
@@ -239,7 +239,6 @@
 
 					<div class="nav-search">
 						<!--<span id="search"><i class="fa fa-search"></i></span>-->
-						<!--<span><a href="../admin/Controllers/ControllerLogout.php">Se déconnecter</a></span>-->
 						<?php include("se_deconnecter.php"); ?>
 					</div><!-- Search end -->
 
@@ -280,134 +279,17 @@
 
          <div class="row">
             <div class="col-md-8">
-				<div class="quote-item-footer">
-                     <!--<img class="testimonial-thumb" src="images/clients/testimonial1.png" alt="testimonial">-->
-					 <img class="testimonial-thumb" src="../images/neutre.png" alt="Image par défaut">
+				<!--<div class="quote-item-footer">
+                     <img class="testimonial-thumb" src="images/clients/testimonial1.png" alt="testimonial">
                      <div class="quote-item-info">
-                        <h3 class="quote-author">
-						<?php						
-						function securisation($donnees)
-						{
-						  $donnees = trim($donnees);
-						  $donnees = stripslashes($donnees);
-						  $donnees = strip_tags($donnees);
-						  return $donnees;
-						}
-						
-						include ('../admin/Controllers/connection.php');
-						
-						if($_GET["matricule"])
-						{							
-							
-							$IdentifiantMembre = securisation($_GET['matricule']);
-
-							$sql = "SELECT NomMissionnaire, PrenomsMissionnaire FROM missionnaire WHERE MissionnaireMatricule='".$IdentifiantMembre."'";
-
-							$result = mysqli_query($conn, $sql);
-							
-							$rooi = $result->fetch_assoc();
-							
-							echo $rooi["PrenomsMissionnaire"]." ".$rooi["NomMissionnaire"];
-						}							
-						
-						mysqli_close($conn);						
-						?>
-						</h3>
-                        <span class="quote-subtext">Matricule : 
-						<?php
-						
-						include ('../admin/Controllers/connection.php');
-						
-						if($_GET["matricule"])
-						{							
-							
-							$IdentifiantMembre = securisation($_GET['matricule']);
-
-							
-							
-							echo $IdentifiantMembre;
-						}							
-												
-						?>
-						</span>
+                        <h3 class="quote-author">Michel M. OBLE</h3>
+                        <span class="quote-subtext">Matricule : MVTM0363</span>
                      </div>
                   </div>
-               <h4 class="border-title border-left mar-t0">
-			   <?php
-						
-					include ('../admin/Controllers/connection.php');
-					
-					if($_GET["matricule"])
-					{							
-						
-						$IdentifiantMembre = securisation($_GET['matricule']);
-
-						$sql = "SELECT DepartementActuelMissionnaire FROM missionnaire WHERE MissionnaireMatricule='".$IdentifiantMembre."'";
-
-						$result = mysqli_query($conn, $sql);
-						
-						$rooi = $result->fetch_assoc();
-						
-						switch ($rooi["DepartementActuelMissionnaire"]) {
-							case "Compassion":
-								echo "Actes de compassion";
-								break;
-							case "Prophetique":
-								echo "Action prophétique";
-								break;
-							case "direction_campagne":
-								echo "Direction de campagne";
-								break;
-							case "EnfanceDeVie":
-								echo "Enfance de vie";
-								break;
-							case "Evangelisation":
-								echo "Evangélisation plein air porte à porte";
-								break;
-							case "EventManager":
-								echo "Event manager";
-								break;
-							case "FlammesDeVie":
-								echo "Flammes de vie";
-								break;
-							case "Healing":
-								echo "Healing team";
-								break;
-							case "MedecineDeVie":
-								echo "Médecine de vie";
-								break;
-							case "Sono":
-								echo "Régie technique";
-								break;
-							case "RestaurationLeaman":
-								echo "Restauration Leaman";
-								break;
-							case "SmalahEnAction":
-								echo "Smalah en mission";
-								break;
-							case "Boutique":
-								echo "Sociales (boutique 931)";
-								break;
-							case "Temoignage":
-								echo "Témoignage de vie";
-								break;
-							case "Temoins":
-								echo "Témoins et conseillers";
-								break;
-							default:
-								echo $rooi["DepartementActuelMissionnaire"];
-								break;
-							}
-						
-						//echo $rooi["DepartementActuelMissionnaire"];
-					}							
-					
-					mysqli_close($conn);						
-				?>
-			   </h4>
+               <h4 class="border-title border-left mar-t0">Communication</h4>-->
 				
-				<span class="quote-subtext"><font color="#FF0000">IMPORTANT!!!</font> Si cela n'est pas encore fait, nous avons besoin que vous complétiez vos informations du Tour 931 ? Pour cela, cliquez sur le menu en haut <a href="#">INFOS DU TOUR</a></span>
-               <div class="panel-group panel-classic" id="accordionA">
+				<!--<span class="quote-subtext"><font color="#FF0000">IMPORTANT!!!</font> Nous avons besoin que vous complétiez vos informations du Tour 931 ? Pour cela, cliquez sur le menu en haut <a href="#">INFOS DU TOUR</a></span>-->
+               <!--<div class="panel-group panel-classic" id="accordionA">
                   <div class="panel panel-default">
                       <div class="panel-heading">
                          <h4 class="panel-title"> 
@@ -417,72 +299,12 @@
                       </div>
                       <div id="collapseOne" class="panel-collapse collapse in">
                            <div class="panel-body">
-                           <p>Téléphone 1 : <strong>
-						   <?php						
-								include ('../admin/Controllers/connection.php');
-								
-								if($_GET["matricule"])
-								{							
-									
-									$IdentifiantMembre = securisation($_GET['matricule']);
-
-									$sql = "SELECT TelephoneMissionnaire FROM missionnaire WHERE MissionnaireMatricule='".$IdentifiantMembre."'";
-
-									$result = mysqli_query($conn, $sql);
-									
-									$rooi = $result->fetch_assoc();
-									
-									echo $rooi["TelephoneMissionnaire"];
-								}							
-								
-								mysqli_close($conn);												
-							?>
-						   </strong> <br />
-						   Téléphone 2 : <strong>
-						   <?php						
-								include ('../admin/Controllers/connection.php');
-								
-								if($_GET["matricule"])
-								{							
-									
-									$IdentifiantMembre = securisation($_GET['matricule']);
-
-									$sql = "SELECT Telephone2Missionnaire FROM missionnaire WHERE MissionnaireMatricule='".$IdentifiantMembre."'";
-
-									$result = mysqli_query($conn, $sql);
-									
-									$rooi = $result->fetch_assoc();
-									
-									echo $rooi["Telephone2Missionnaire"];
-								}							
-								
-								mysqli_close($conn);												
-							?>
-						   </strong> <br />
-						   Email : <strong>
-						   <?php						
-								include ('../admin/Controllers/connection.php');
-								
-								if($_GET["matricule"])
-								{							
-									
-									$IdentifiantMembre = securisation($_GET['matricule']);
-
-									$sql = "SELECT EmailMissionnaire FROM missionnaire WHERE MissionnaireMatricule='".$IdentifiantMembre."'";
-
-									$result = mysqli_query($conn, $sql);
-									
-									$rooi = $result->fetch_assoc();
-									
-									echo $rooi["EmailMissionnaire"];
-								}							
-								
-								mysqli_close($conn);												
-							?>
-						   </strong></p>
+                           <p>Téléphone 1 : +225 51 10 37 66 <br />
+						   Téléphone 2 : +225 58 27 63 18 <br />
+						   Email : michel.oble@vasesdhonneur.info</p>
                         </div>
                       </div>
-                  </div><!--/ Panel 1 end-->
+                  </div>
 
                   <div class="panel panel-default">
                       <div class="panel-heading">
@@ -492,137 +314,178 @@
                       </div>
                       <div id="collapseTwo" class="panel-collapse collapse">
                         <div class="panel-body">
-                          <p>Département technique : <strong>
-						  <?php						
-								include ('../admin/Controllers/connection.php');
-								
-								if($_GET["matricule"])
-								{							
-									
-									$IdentifiantMembre = securisation($_GET['matricule']);
-
-									$sql = "SELECT DepartementActuelMissionnaire FROM missionnaire WHERE MissionnaireMatricule='".$IdentifiantMembre."'";
-
-									$result = mysqli_query($conn, $sql);
-									
-									$rooi = $result->fetch_assoc();
-									
-									include("../departements/afficher_departement.php");
-									
-									//echo $rooi["DepartementActuelMissionnaire"];
-								}							
-								
-								mysqli_close($conn);						
-							?>
-						  </strong> <br />
-						  Département ministériel : <strong>
-						  <?php						
-								include ('../admin/Controllers/connection.php');
-								
-								if($_GET["matricule"])
-								{							
-									
-									$IdentifiantMembre = securisation($_GET['matricule']);
-
-									$sql = "SELECT DepartementMinisterielMissionnaire FROM missionnaire WHERE MissionnaireMatricule='".$IdentifiantMembre."'";
-
-									$result = mysqli_query($conn, $sql);
-									
-									$rooi = $result->fetch_assoc();
-									
-									echo $rooi["DepartementMinisterielMissionnaire"];
-								}							
-								
-								mysqli_close($conn);						
-							?>
-						  </strong><br />
-						  Cellule Messages de Vie : <strong>
-						  <?php						
-								include ('../admin/Controllers/connection.php');
-								
-								if($_GET["matricule"])
-								{							
-									
-									$IdentifiantMembre = securisation($_GET['matricule']);
-
-									$sql = "SELECT CelluleMissionnaire FROM missionnaire WHERE MissionnaireMatricule='".$IdentifiantMembre."'";
-
-									$result = mysqli_query($conn, $sql);
-									
-									$rooi = $result->fetch_assoc();
-									
-									echo $rooi["CelluleMissionnaire"];
-								}							
-								
-								mysqli_close($conn);						
-							?>
-						  </strong> <br />
-						  Date d'intégration : <strong>
-						  <?php						
-								include ('../admin/Controllers/connection.php');
-								
-								if($_GET["matricule"])
-								{							
-									
-									$IdentifiantMembre = securisation($_GET['matricule']);
-
-									$sql = "SELECT DateIntegrationMissionnaire FROM missionnaire WHERE MissionnaireMatricule='".$IdentifiantMembre."'";
-
-									$result = mysqli_query($conn, $sql);
-									
-									$rooi = $result->fetch_assoc();
-									
-									echo $rooi["DateIntegrationMissionnaire"];
-								}							
-								
-								mysqli_close($conn);						
-							?>
-						  </strong></p>
+                          <p>Département technique : Communication <br />
+						  Département ministériel : Action missionnaire<br />
+						  Cellule Messages de Vie : Kodesh <br />
+						  Date d'intégration : 02/07/1996</p>
                         </div>
                       </div>
-                  </div><!--/ Panel 2 end-->
-				  
-				  <div class="panel panel-default">
+                  </div>
+
+                  <div class="panel panel-default">
                      <div class="panel-heading">
                          <h4 class="panel-title">
-                         <a data-toggle="collapse" class="collapsed" data-parent="#accordionA, #accordionB" href="#collapseThree">Mes choix pour le Tour 931</a> 
+                         <a data-toggle="collapse" class="collapsed" data-parent="#accordionA, #accordionB" href="#collapseThree">Autres informations personnelles</a> 
                         </h4>
                      </div>
                      <div id="collapseThree" class="panel-collapse collapse">
                         <div class="panel-body">
-                          <p>Villes : <strong>
-						  <?php						
+                          <p>Lieu de résidence : Abidjan - Cocody Riviera Faya <br />
+						  Fonction au travail : Responsable informatique <br />
+						  Eglise : Vases d'Honneur Centre Kodesh</p>
+                        </div>
+                     </div>
+                  </div>
+
+               </div>-->
+
+               <div class="gap-40"></div>
+
+               <h3 class="border-title border-left"><?php echo $_GET["matricule"];?> : 
+			   <?php
+				function securisation($donnees)
+				{
+				  $donnees = trim($donnees);
+				  $donnees = stripslashes($donnees);
+				  $donnees = strip_tags($donnees);
+				  return $donnees;
+				}
+				
+				include ('../admin/Controllers/connection.php');
+				
+				if($_GET["matricule"])
+				{							
+					
+					$IdentifiantMembre = securisation($_GET['matricule']);
+
+					$sql = "SELECT PrenomsMissionnaire FROM missionnaire WHERE MissionnaireMatricule='".$IdentifiantMembre."'";
+
+					$result = mysqli_query($conn, $sql);
+					
+					$rooi = $result->fetch_assoc();
+					
+					echo $rooi["PrenomsMissionnaire"];
+				}							
+				
+				mysqli_close($conn);						
+				?>
+			   => Mes Choix pour le Tour 931</h3>
+				
+				<form action="../admin/Controllers/ControllerEditMembre1.php" method="post" role="form">
+                  <div class="error-container"></div>				  
+						<!--<label><font color=red>*</font><i>Champs obligatoires</i></label>-->
+				  <!-- Ajout champ du Matricule -->
+				  
+				  <label><strong>Choisissez la ville que vous voulez faire :</strong></label>
+				  <!-- Fin ajout Matricule -->
+                  <div class="row">
+                     <div class="col-md-4">						
+                        <div class="form-group">
+                           <label>Béoumi (11 - 14/03/2020)</label>
+                        <!--<input class="form-control form-control-nom_missionnaire" name="nom_missionnaire" id="nom_missionnaire" placeholder="" type="text" required>-->
+						<input type="hidden" name="matricule_missionnaire" id="matricule_missionnaire" value="<?php echo $_GET["matricule"]?>">
+						<select class="form-control form-control-ville1_missionnaire" name="ville1_missionnaire" id="ville1_missionnaire">
+								<option>
+								<?php
 								include ('../admin/Controllers/connection.php');
-								
+				
 								if($_GET["matricule"])
 								{							
 									
 									$IdentifiantMembre = securisation($_GET['matricule']);
 
-									$sql = "SELECT Ville1Missionnaire, Ville2Missionnaire, Ville3Missionnaire FROM missionnaire WHERE MissionnaireMatricule='".$IdentifiantMembre."'";
+									$sql = "SELECT Ville1Missionnaire FROM missionnaire WHERE MissionnaireMatricule='".$IdentifiantMembre."'";
 
 									$result = mysqli_query($conn, $sql);
 									
 									$rooi = $result->fetch_assoc();
 									
-									$Villes ="";
-									
-									if($rooi["Ville1Missionnaire"] == "Oui"){$Villes = "Bouake";}
-									
-									if($rooi["Ville2Missionnaire"] == "Oui"){$Villes .= " - Yamoussoukro";}
-									
-									if($rooi["Ville3Missionnaire"] == "Oui"){$Villes .= " - Tiebissou";}
-									
-									echo $Villes;
+									echo $rooi["Ville1Missionnaire"];
 								}							
 								
-								mysqli_close($conn);						
-							?>
-						  </strong> <br />
-						  Départ Officiel : <strong>
-						  <?php						
+								mysqli_close($conn);
+								?>
+								</option>
+								<option value="Oui">Oui</option>
+								<option value="Non">Non</option>
+						   </select>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="form-group">
+                           <label>Tiébissou (18 - 21/03/2020)</label>
+                           <!--<input class="form-control form-control-etape_yamoussoukro" name="etape_yamoussoukro" id="etape_yamoussoukro" 
+                           placeholder="" type="text" required>-->
+						   <select class="form-control form-control-ville2_missionnaire" name="ville2_missionnaire" id="ville2_missionnaire">
+								<option>
+								<?php
 								include ('../admin/Controllers/connection.php');
+				
+								if($_GET["matricule"])
+								{							
+									
+									$IdentifiantMembre = securisation($_GET['matricule']);
+
+									$sql = "SELECT Ville2Missionnaire FROM missionnaire WHERE MissionnaireMatricule='".$IdentifiantMembre."'";
+
+									$result = mysqli_query($conn, $sql);
+									
+									$rooi = $result->fetch_assoc();
+									
+									echo $rooi["Ville2Missionnaire"];
+								}							
 								
+								mysqli_close($conn);
+								?>
+								</option>
+								<option value="Oui">Oui</option>
+								<option value="Non">Non</option>
+						   </select>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="form-group">
+                           <label>Sakassou (25 - 28/03/2020)</label>
+                           <!--<input class="form-control form-control-subject" name="subject" id="subject" 
+                           placeholder="" required>-->
+						   <select class="form-control form-control-ville3_missionnaire" name="ville3_missionnaire" id="ville3_missionnaire">
+								<option>
+								<?php
+								include ('../admin/Controllers/connection.php');
+				
+								if($_GET["matricule"])
+								{							
+									
+									$IdentifiantMembre = securisation($_GET['matricule']);
+
+									$sql = "SELECT Ville3Missionnaire FROM missionnaire WHERE MissionnaireMatricule='".$IdentifiantMembre."'";
+
+									$result = mysqli_query($conn, $sql);
+									
+									$rooi = $result->fetch_assoc();
+									
+									echo $rooi["Ville3Missionnaire"];
+								}							
+								
+								mysqli_close($conn);
+								?>
+								</option>
+								<option value="Oui">Oui</option>
+								<option value="Non">Non</option>
+						   </select>
+                        </div>
+                     </div>
+					</div>
+				  
+				  <div class="form-group">
+					<p><strong>Choisissez votre date de départ :</strong></p>
+                     <label>Je choisis la date officielle (vendredi 06 mars 2020)</label>
+                     <!--<textarea class="form-control form-control-message" name="message" id="message" placeholder="" rows="10" required></textarea>-->
+				  <select class="form-control form-control-depart_officiel_missionnaire" name="depart_officiel_missionnaire" id="depart_officiel_missionnaire">
+								<option>
+								<?php
+								include ('../admin/Controllers/connection.php');
+				
 								if($_GET["matricule"])
 								{							
 									
@@ -637,13 +500,19 @@
 									echo $rooi["DepartOfficielMissionnaire"];
 								}							
 								
-								mysqli_close($conn);						
-							?>
-						  </strong><br />
-						  Date autre départ : <strong>
-						  <?php						
+								mysqli_close($conn);
+								?>
+								</option>
+								<option value="Oui">Oui</option>
+								<option value="Non">Non</option>
+						   </select>
+				    </div>
+					<div class="form-group">
+                     <label>Si non, choisissez une autre date</label>
+                           <input type="date" class="form-control form-control-date_autre_missionnaire" name="date_autre_missionnaire" id="date_autre_missionnaire" 
+						   value="<?php
 								include ('../admin/Controllers/connection.php');
-								
+				
 								if($_GET["matricule"])
 								{							
 									
@@ -658,174 +527,34 @@
 									echo $rooi["DateAutreDepart"];
 								}							
 								
-								mysqli_close($conn);						
-							?>
-						  </strong><br />
-						  Raison : <strong>
-						  <?php						
-								include ('../admin/Controllers/connection.php');
-								
-								if($_GET["matricule"])
-								{							
-									
-									$IdentifiantMembre = securisation($_GET['matricule']);
-
-									$sql = "SELECT RaisonDateAutreDepart FROM missionnaire WHERE MissionnaireMatricule='".$IdentifiantMembre."'";
-
-									$result = mysqli_query($conn, $sql);
-									
-									$rooi = $result->fetch_assoc();
-									
-									echo $rooi["RaisonDateAutreDepart"];
-								}							
-								
-								mysqli_close($conn);						
-							?>
-						  </strong></p>
-                        </div>
-                     </div>
-                  </div><!--/ Panel 3 end-->
-
-                  <div class="panel panel-default">
-                     <div class="panel-heading">
-                         <h4 class="panel-title">
-                         <a data-toggle="collapse" class="collapsed" data-parent="#accordionA, #accordionB" href="#collapseFour">Autres informations personnelles</a> 
-                        </h4>
-                     </div>
-                     <div id="collapseFour" class="panel-collapse collapse">
-                        <div class="panel-body">
-                          <p>Lieu de résidence : <strong>
-						  <?php						
-								include ('../admin/Controllers/connection.php');
-								
-								if($_GET["matricule"])
-								{							
-									
-									$IdentifiantMembre = securisation($_GET['matricule']);
-
-									$sql = "SELECT HabitationMissionnaire FROM missionnaire WHERE MissionnaireMatricule='".$IdentifiantMembre."'";
-
-									$result = mysqli_query($conn, $sql);
-									
-									$rooi = $result->fetch_assoc();
-									
-									echo $rooi["HabitationMissionnaire"];
-								}							
-								
-								mysqli_close($conn);						
-							?>
-						  </strong> <br />
-						  Fonction au travail : <strong>
-						  <?php						
-								include ('../admin/Controllers/connection.php');
-								
-								if($_GET["matricule"])
-								{							
-									
-									$IdentifiantMembre = securisation($_GET['matricule']);
-
-									$sql = "SELECT FonctionMissionnaire FROM missionnaire WHERE MissionnaireMatricule='".$IdentifiantMembre."'";
-
-									$result = mysqli_query($conn, $sql);
-									
-									$rooi = $result->fetch_assoc();
-									
-									echo $rooi["FonctionMissionnaire"];
-								}							
-								
-								mysqli_close($conn);						
-							?>
-						  </strong> <br />
-						  Eglise : <strong>
-						  <?php						
-								include ('../admin/Controllers/connection.php');
-								
-								if($_GET["matricule"])
-								{							
-									
-									$IdentifiantMembre = securisation($_GET['matricule']);
-
-									$sql = "SELECT EgliseMissionnaire FROM missionnaire WHERE MissionnaireMatricule='".$IdentifiantMembre."'";
-
-									$result = mysqli_query($conn, $sql);
-									
-									$rooi = $result->fetch_assoc();
-									
-									echo $rooi["EgliseMissionnaire"];
-								}							
-								
-								mysqli_close($conn);						
-							?>
-						  </strong></p>
-                        </div>
-                     </div>
-                  </div><!--/ Panel 4 end-->
-
-               </div><!-- Accordion end -->
-
-               <!--<div class="gap-40"></div>
-
-               <h3 class="border-title border-left">Mes Choix pour le Tour 931</h3>
-				
-				<form action="ControllerAddMissionnaire.php" method="post" role="form">
-                  <div class="error-container"></div>				  
-										  
-				  <label><strong>Choisissez la ville que vous voulez faire :</strong></label>
-				  
-                  <div class="row">
-                     <div class="col-md-4">						
-                        <div class="form-group">
-                           <label>Bouaké (11 - 13/03/2020)</label>
-                        
-						<select class="form-control form-control-etape_bouake" name="etape_bouake" id="etape_bouake">
-								<option></option>
-								<option value="Oui">Oui</option>
-								<option value="Non">Non</option>
-						   </select>
-                        </div>
-                     </div>
-                     <div class="col-md-4">
-                        <div class="form-group">
-                           <label>Yamoussoukro (18 - 20/03/2020)</label>
-                           
-						   <select class="form-control form-control-etape_yamoussoukro" name="etape_yamoussoukro" id="etape_yamoussoukro">
-								<option></option>
-								<option value="Oui">Oui</option>
-								<option value="Non">Non</option>
-						   </select>
-                        </div>
-                     </div>
-                     <div class="col-md-4">
-                        <div class="form-group">
-                           <label>Tiébissou (25 - 27/03/2020)</label>
-                           
-						   <select class="form-control form-control-etape_tiebissou" name="etape_tiebissou" id="etape_tiebissou">
-								<option></option>
-								<option value="Oui">Oui</option>
-								<option value="Non">Non</option>
-						   </select>
-                        </div>
-                     </div>
-					</div>
-				  
-				  <div class="form-group">
-					<p><strong>Choisissez votre date de départ :</strong></p>
-                     <label>Je choisis la date officielle (lundi 09 mars 2020)</label>
-                     
-				  <select class="form-control form-control-sexe_missionnaire" name="sexe_missionnaire" id="sexe_missionnaire" required>
-								<option></option>
-								<option value="Oui">Oui</option>
-								<option value="Non">Non</option>
-						   </select>
-				    </div>
-					<div class="form-group">
-                     <label>Si non, choisissez une autre date</label>
-                           <input class="form-control form-control-telephone2_missionnaire" name="telephone2_missionnaire" id="telephone2_missionnaire" placeholder="" type="date">
+								mysqli_close($conn);
+						   ?>" >
 				    </div>
 					<div class="form-group">
                      <label>Donnez la raison : </label>
-                     <textarea class="form-control form-control-message" name="message" id="message" placeholder="" rows="10" required></textarea>
-				    </div>	-->
+                     <textarea class="form-control form-control-raison_autre_date" name="raison_autre_date" id="raison_autre_date" rows="10" >
+					 <?php
+						include ('../admin/Controllers/connection.php');
+					
+						if($_GET["matricule"])
+						{							
+							
+							$IdentifiantMembre = securisation($_GET['matricule']);
+
+							$sql = "SELECT RaisonDateAutreDepart FROM missionnaire WHERE MissionnaireMatricule='".$IdentifiantMembre."'";
+
+							$result = mysqli_query($conn, $sql);
+							
+							$rooi = $result->fetch_assoc();
+							
+							echo $rooi["RaisonDateAutreDepart"];
+						}							
+						
+						mysqli_close($conn);
+					 ?>
+					 </textarea>
+				    </div>				
+					
 				  
 					<!--<div class="row">
 					 <div class="col-md-4">
@@ -852,8 +581,8 @@
                            placeholder="" type="text">
                         </div>
                      </div>
-                  </div>-->
-				  <!--<div class="row">
+                  </div>
+				  <div class="row">
 				  <div class="col-md-4">
                         <div class="form-group">
                            <label>Email</label>
@@ -872,8 +601,8 @@
                            <input class="form-control form-control-residence_missionnaire" name="residence_missionnaire" id="residence_missionnaire" placeholder="">
                         </div>
                      </div>
-                  </div>-->
-				  <!--<div class="row">
+                  </div>
+				  <div class="row">
 				  <div class="col-md-4">
                         <div class="form-group">
                            <label>Fonction au travail</label>
@@ -893,16 +622,13 @@
                         </div>
                      </div>
                   </div>-->
-                  <!--<div class="form-group">
-                     <label>Message</label>
-                     <textarea class="form-control form-control-message" name="message" id="message" placeholder="" rows="10" required></textarea>
-                  </div>-->
+                  
 				  
 				  
-                  <!--<div class="text-right"><br>
-                     <button class="btn btn-primary solid blank" type="submit">Enregistrer</button> 
+                  <div class="text-right"><br>
+                     <button class="btn btn-primary solid blank" type="submit" name="submit" id="submit">Enregistrer</button> 
                   </div>
-               </form>-->
+               </form>
 
                <!--<div class="panel-group panel-classic" id="accordionB">
                   <div class="panel panel-default">
@@ -955,7 +681,7 @@
 
                <div class="sidebar sidebar-right">
                   <div class="widget recent-posts">
-					 <h3 class="widget-title"><a href="infos_tour.php">Compléter informations du Tour</a></h3>
+                     <h3 class="widget-title"><a href="infos_tour.php">Compléter informations du Tour</a></h3>
                      <h3 class="widget-title"><a href="mes_infos.php">Modifier mes informations</a></h3>
                      <!--<ul class="unstyled clearfix">
                         <li>
