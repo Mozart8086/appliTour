@@ -376,6 +376,39 @@
 						<!--<label><font color=red>*</font><i>Champs obligatoires</i></label>-->
 				  <!-- Ajout champ du Matricule -->
 				  
+				  <div class="form-group">
+					<p><strong>Choisissez la ville que vous voulez faire :</strong></p>
+                     <!--<textarea class="form-control form-control-message" name="message" id="message" placeholder="" rows="10" required></textarea>-->
+				  <!--<select class="form-control form-control-ville123_missionnaire" name="ville123_missionnaire" id="ville123_missionnaire">-->
+				  <input class="form-control form-control-choix" type="checkbox" name="choix[]" value="1"> Béoumi (11 - 14/03/2020)<br>
+				  <input class="form-control form-control-choix" type="checkbox" name="choix[]" value="2"> Tiébissou (18 - 21/03/2020)<br>
+				  <input class="form-control form-control-choix" type="checkbox" name="choix[]" value="3"> Sakassou (25 - 28/03/2020)<br>
+								<option>
+								<?php
+								include ('../admin/Controllers/connection.php');
+				
+								if($_GET["matricule"])
+								{							
+									
+									$IdentifiantMembre = securisation($_GET['matricule']);
+
+									$sql = "SELECT Ville1Missionnaire,Ville2Missionnaire,Ville3Missionnaire FROM missionnaire WHERE MissionnaireMatricule='".$IdentifiantMembre."'";
+
+									$result = mysqli_query($conn, $sql);
+									
+									$rooi = $result->fetch_assoc();
+									
+									echo $rooi["DepartOfficielMissionnaire"];
+								}							
+								
+								mysqli_close($conn);
+								?>
+								</option>
+								<!--<option value="Oui">Oui</option>
+								<option value="Non">Non</option>
+						   </select>-->
+				    </div>
+				  
 				  <label><strong>Choisissez la ville que vous voulez faire :</strong></label>
 				  <!-- Fin ajout Matricule -->
                   <div class="row">
